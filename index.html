@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heladería DIGA</title>
+    <style>
+        body {
+            font-family: Comic Sans MS, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #FCE2F3;
+            color: #333;
+        }
+        header {
+            background-color: #E3A0DC;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #B8D4D9;
+            padding: 10px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav button {
+            background-color: #E3A0DC;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 0 10px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        nav button:hover {
+            background-color: #E3A0DC;
+        }
+        .container {
+            text-align: center;
+            padding-top: 20px;
+        }
+        .content {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            width: 80%;
+            max-width: 600px;
+        }
+        .content img {
+            display: block;
+            margin: 20px auto 0;
+            max-width: 100%;
+            height: auto;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Heladería DIGA</h1>
+</header>
+
+<nav>
+    <button onclick="showContent('inicio')">Inicio</button>
+    <button onclick="showContent('mision')">Misión</button>
+    <button onclick="showContent('vision')">Visión</button>
+    <button onclick="showContent('filosofia')">Filosofía</button>
+</nav>
+
+<div class="container">
+    <div class="content" id="content">
+        <p>Haz clic en un botón para ver el contenido.</p>
+    </div>
+</div>
+
+<script>
+    function showContent(section) {
+        let content = '';
+        if (section === 'inicio') {
+            content = `<h2>Bienvenidos a Heladería DIGA</h2>
+                       <p>¡No es mas feliz el que mas tiene, si no, el que mas helados come!</p>
+                       <img src="C:\Users\adria\OneDrive\Documentos\trabajo ferreria" alt="Inicio">`;
+        } else if (section === 'mision') {
+            content = `<h2>Nuestra Misión</h2>
+                       <p>En Heladería DIGA, nuestra misión es deleitar a nuestros clientes con helados artesanales de la más alta calidad, elaborados con ingredientes frescos y naturales. Nos esforzamos por crear un ambiente acogedor y amigable donde cada visita sea una experiencia memorable.</p>
+                       <img src="C:\Users\adria\OneDrive\Documentos\trabajo ferreria\imagen 1.jpg" alt="Nuestra Misión">`;
+        } else if (section === 'vision') {
+            content = `<h2>Visión</h2>
+                       <p>Nuestra visión es convertirnos en la heladería de referencia en la comunidad, reconocida por nuestra innovación en sabores y nuestro compromiso con la sostenibilidad y la responsabilidad social. Aspiramos a expandir nuestra presencia y llevar la felicidad de nuestros helados a más personas.</p>
+                       <img src="vision.png" alt="Visión">`;
+        } else if (section === 'filosofia') {
+            content = `<h2>Filosofía</h2>
+                       <p>En Heladería DIGA, somos auna empresa con valores, comprometidos para actuar con sinceridad y respeto a nuestros clientes para ofrecer helados y paletas con calidad a buen precio .</p>
+                       <img src="C:\Users\adria\OneDrive\Documentos\trabajo ferreria\PAG WEB EMPRESA\PRESENTACION GNRAL.jpg " alt="Filosofía">`;
+        }
+        document.getElementById('content').innerHTML = content;
+        document.getElementById('content').scrollIntoView({ behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
